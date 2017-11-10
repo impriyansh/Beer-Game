@@ -2,6 +2,7 @@
 import random
 from random import randint
 import matplotlib.pyplot as plt
+
 import numpy as np
 from numpy import random
 
@@ -235,45 +236,77 @@ for i in range(0,N+1):
     print (Total_cost_F)
     My_Order_F[i] = int(input('Whats​ ​your​ ​order​ ​Factory​ ​?:​ ​​ '))
     Orders_F[i] = My_Order_F[i]
-print (Weeks)
-print (Total_cost_R_array)
 
-plt.plot(Weeks, Total_cost_R_array, color = 'Red', label = 'Plot of Total Department Cost')
+p1 = plt.subplot(321)
+plt.plot(Weeks, Total_cost_R_array, color = 'Red', label = 'Retailer')
 plt.xlabel('Weeks')
 plt.ylabel('Total Cost')
 #plt.show()
 
-plt.plot(Weeks, Total_cost_W_array, color = 'Green', label = 'Hold')
+plt.plot(Weeks, Total_cost_W_array, color = 'Green', label = 'Wholesaler')
 plt.xlabel('Weeks')
 plt.ylabel('Total Cost')
 #plt.show()
 
-plt.plot(Weeks, Total_cost_D_array, color = 'Yellow', label = 'Hold')
+plt.plot(Weeks, Total_cost_D_array, color = 'Yellow', label = 'Distributor')
 plt.xlabel('Weeks')
 plt.ylabel('Total Cost')
 #plt.show()
 
-plt.plot(Weeks, Total_cost_F_array, color = 'Blue', label = 'Hold')
+plt.plot(Weeks, Total_cost_F_array, color = 'Blue', label = 'Factory')
 plt.xlabel('Weeks')
 plt.ylabel('Total Cost')
+
+
+p1.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+p2 = plt.subplot(323)
+
+plt.plot(Weeks, Total_stock_R, color = 'Red', label = 'Retailer')
+plt.xlabel('Weeks')
+plt.ylabel('Stocks')
+#plt.show()
+
+plt.plot(Weeks, Total_stock_W, color = 'Green', label = 'Wholesaler')
+plt.xlabel('Weeks')
+plt.ylabel('Stocks')
+#plt.show()
+
+plt.plot(Weeks, Total_stock_D, color = 'Yellow', label = 'Distributor')
+plt.xlabel('Weeks')
+plt.ylabel('Stocks')
+#plt.show()
+
+plt.plot(Weeks, Total_stock_F, color = 'Blue', label = 'Factory')
+plt.xlabel('Weeks')
+plt.ylabel('Stocks')
+
+#p2.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+p2.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+
+p3 = plt.subplot(325)
+plt.plot(Weeks, My_Order_R, color = 'Red', label = 'Retailor')
+plt.xlabel('Orders')
+plt.ylabel('Weeks')
+#plt.show()
+
+plt.plot(Weeks, My_Order_W, color = 'Green', label = 'Wholesaler')
+plt.xlabel('Orders')
+plt.ylabel('Weeks')
+#plt.show()
+
+plt.plot(Weeks, My_Order_D, color = 'Yellow', label = 'Distributor')
+plt.xlabel('Orders')
+plt.ylabel('Weeks')
+#plt.show()
+
+plt.plot(Weeks, My_Order_F, color = 'Blue', label = 'Factory')
+plt.xlabel('Orders')
+plt.ylabel('Weeks')
+
+p3.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 plt.show()
 
-plt.plot(Weeks, Total_stock_R, color = 'Red', label = 'Plot of total stocks')
-plt.xlabel('Weeks')
-plt.ylabel('Stocks')
-#plt.show()
 
-plt.plot(Weeks, Total_stock_W, color = 'Green', label = 'Plot of total stocks')
-plt.xlabel('Weeks')
-plt.ylabel('Stocks')
-#plt.show()
 
-plt.plot(Weeks, Total_stock_D, color = 'Yellow', label = 'Plot of total stocks')
-plt.xlabel('Weeks')
-plt.ylabel('Stocks')
-#plt.show()
 
-plt.plot(Weeks, Total_stock_F, color = 'Blue', label = 'Plot of total stocks')
-plt.xlabel('Weeks')
-plt.ylabel('Stocks')
-plt.show()
+
